@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="page-header">
+      <h1 class="text-center">Listing Registered Applications</h1>
+    </div>
+
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>App Name (url)</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @registered_applications.each do |app| %>
+          <tr>
+            <td>
+              <%= link_to [current_user, app] do %>
+                <strong><%= app.name %></strong>
+                <small>(<%= app.url %>)</small>
+              <% end %>
+            </td>
+            <td><%= link_to 'Edit', edit_user_registered_application_path(current_user.id, app) %></td>
+            <td><%= link_to 'Destroy', [current_user, app], method: :delete, data: { confirm: 'Are you sure you want to delete this application?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <br>
+
+    <div class="pull-right">
+      <%= link_to new_user_registered_application_path(current_user.id), class: 'btn btn-success' do %>
+        <span class="glyphicon glyphicon-plus-sign"></span> Register an application
+      <% end %>
+    </div>
+  </div>
+</div>
