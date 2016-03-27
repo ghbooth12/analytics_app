@@ -4,18 +4,8 @@
       <h2 class="text-center">New Registered Application</h2>
     </div>
 
-    <%= render 'new' %>
-
-    <div id="add_form">
-    </div>
-
-    <div class="row">
-      <%= link_to user_add_form_path(current_user.id), remote: true do %>
-        <span class="glyphicon glyphicon-plus"></span> Add more applications
-      <% end %>
-    </div>
+    <%= render 'form' %>
 
     <%= link_to 'Back to list', user_registered_applications_path, class: 'btn btn-default' %>
-    <%= link_to 'Save all', { action: :create_multiple }, method: :post, class: 'btn btn-success' %>
   </div>
 </div>
