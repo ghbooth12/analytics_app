@@ -10,11 +10,11 @@
       <div class="panel-heading">
         <h3 class="panel-title"><%= @registered_application.name %></h3>
       </div>
-
       <div class="panel-body">
         <%= @registered_application.url %>
-        <%= @registered_application.user.username %>
-
+      </div>
+      <div class="panel-footer">
+        <div class="text-right">created on <%= @registered_application.created_at.strftime("%F") %></div>
       </div>
     </div>
 
