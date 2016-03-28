@@ -9,9 +9,17 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title"><%= @registered_application.name %></h3>
+        <small> <%= @registered_application.url %></small>
       </div>
       <div class="panel-body">
-        <%= @registered_application.url %>
+        <h4 class="text-center">Events</h4>
+        <ul class="list-group">
+          <% @events.each do |event, array| %>
+            <li class="list-group-item">
+              <span class="badge pull-left"><%= array.size %></span> <%= event %>
+            </li>
+          <% end  %>
+        </ul>
       </div>
       <div class="panel-footer">
         <div class="text-right">created on <%= @registered_application.created_at.strftime("%F") %></div>

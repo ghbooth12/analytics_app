@@ -1,4 +1,4 @@
-test_users = (1..5).to_a.map do |n|
+test_users = (1..5).map do |n|
   User.new(
     username:     Faker::Name.name,
     email:    "test#{n}@example.com",
@@ -10,7 +10,7 @@ test_users.each do |user|
   user.skip_confirmation!
   user.save
 
-  rand(3..5).times do
+  rand(2..4).times do
     app_name = Faker::App.name
     app = user.registered_applications.create!(
       name: app_name,
@@ -20,7 +20,20 @@ test_users.each do |user|
     app.update_attribute(:created_at, rand(10.minutes .. 7.days).ago)
   end
 end
+apps = RegisteredApplication.all
+
+names = ["Click on ad", "Join email list", "View main page", "Share the section", "Edit user's profile" ]
+
+apps.each do |app|
+  rand(10..20).times do
+    event = app.events.create!(
+      name: names.sample
+    )
+    event.update_attribute(:created_at, rand(10.minutes .. 7.days).ago)
+  end
+end
 
 puts "Seed finished"
 puts "#{User.count} users created"
 puts "#{RegisteredApplication.count} registered applications created"
+puts "#{Event.count} events created"
