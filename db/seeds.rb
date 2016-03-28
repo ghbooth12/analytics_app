@@ -14,7 +14,7 @@ test_users.each do |user|
     app_name = Faker::App.name
     app = user.registered_applications.create!(
       name: app_name,
-      url: "#{app_name.downcase}-test.io"
+      url: "http://#{app_name.downcase.split(' ').join('-')}.io"
     )
 
     app.update_attribute(:created_at, rand(10.minutes .. 7.days).ago)
