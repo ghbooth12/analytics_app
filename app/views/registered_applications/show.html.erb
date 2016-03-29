@@ -20,6 +20,12 @@
             </li>
           <% end  %>
         </ul>
+
+        <div class="chart">
+          <%= pie_chart @registered_application.events.group(:name).count %>
+
+          <%= line_chart @registered_application.events.group_by_day(:created_at).count %>
+        </div>
       </div>
       <div class="panel-footer">
         <div class="text-right">created on <%= @registered_application.created_at.strftime("%F") %></div>
