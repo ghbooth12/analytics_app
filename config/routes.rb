@@ -17,5 +17,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  get 'auto_sign' => 'welcome#auto_sign'
+
   root 'welcome#index'
 end

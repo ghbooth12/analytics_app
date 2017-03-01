@@ -1,5 +1,69 @@
 <div class="jumbotron">
-  <h1>Analytics App</h1>
-  <p>This is a API Tracking Service and Reporting Tool to track user activity and report results.</p>
-  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+  <h2>Analytics App</h2>
+  <p>Analytics app is an analytics service and reporting tool that you can use with web apps to track user activity and report results. It uses a server-side API that captures and saves those events to a database.</p>
+
+  <a href="https://github.com/ghbooth12/analytics_app" target="_blank" class="btn btn-info">GitHub</a>
+  <%= link_to "Log in as test user automatically", auto_sign_path, class: 'btn btn-success' %>
+</div>
+
+<div id="steps" class="row">
+  <div class="col-xs-12">
+    <div class="panel">
+      <div class="panel-heading">
+        <h2><strong>How it works</strong></h2>
+        <p>Log-in as test user account, take a look how it works.</p>
+      </div>
+      <div class="panel-body">
+        <div class="well">
+          <ol class="hover-link">
+            <li>
+              <%= link_to auto_sign_path do %>
+                Click here to log in automatically. <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to user_registered_applications_path(@tester) do %>
+                See all registered apps. <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_user_registered_application_path(@tester) do %>
+                Register a new app URL to track user activity. <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+              <% end %>
+            </li>
+            <li>
+              <a href="https://github.com/ghbooth12/analytics_app#create-a-javascript-snippet" target="_blank"> Go to one of your apps and copy/paste this JavaScript snippet in the app that you choose. <span class="glyphicon glyphicon-link" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Learn more"></span></a>
+              <pre>
+                // application.js
+                var analytics_app = {};
+                analytics_app.report = function(eventName){
+                  var event = { event: { name: eventName } };
+                  var request = new XMLHttpRequest();
+
+                  request.open("POST", "http://analytics-app-ghbooth12.herokuapp.com/api/events", true);
+                  request.setRequestHeader('Content-Type', 'application/json');
+                  request.send(JSON.stringify(event));
+                };
+
+                // ============ e.g., Track "click" event on "#target-element" element. ============
+                $(document).ready(function(){
+                  $('#target-element').on("click", function(){
+                    analytics_app.report("Clicked Wikis button from the greeting section");
+                  });
+                });
+              </pre>
+            </li>
+            <li>
+              Make actions on the target element in <strong>the registered app</strong>. e.g., click
+            </li>
+            <li>
+              <%= link_to user_registered_application_path(@tester, @tester_app) do %>
+                View user activities in beutiful charts. <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+              <% end %>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
