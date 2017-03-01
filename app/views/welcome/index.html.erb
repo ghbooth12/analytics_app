@@ -1,6 +1,11 @@
 <div class="jumbotron">
   <h2>Analytics App</h2>
-  <p>Analytics app is an analytics service and reporting tool that you can use with web apps to track user activity and report results. It uses a server-side API that captures and saves those events to a database.</p>
+  <ul class="list-unstyled">
+    <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Analytics app is an analytics service and reporting tool that you can use with web apps to track user activity and report results.</li>
+    <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> It uses a client-side JavaScript snippet that allows a user to track events on their website.</li>
+    <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Then the server-side API captures and saves those events to a database.</li>
+    <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Finally it displays the captured event data for a user.</li>
+  </ul>
 
   <a href="https://github.com/ghbooth12/analytics_app" target="_blank" class="btn btn-info">GitHub</a>
   <%= link_to "Log in as test user automatically", auto_sign_path, class: 'btn btn-success' %>
@@ -58,7 +63,7 @@
             </li>
             <li>
               <%= link_to user_registered_application_path(@tester, @tester_app) do %>
-                View user activities in beutiful charts. <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+                View user activities in beautiful charts. <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
               <% end %>
             </li>
           </ol>

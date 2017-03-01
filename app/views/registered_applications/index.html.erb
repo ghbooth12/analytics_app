@@ -1,14 +1,15 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <div class="page-header">
-      <h1 class="text-center">Listing Registered Applications</h1>
+    <div class="page-header text-center">
+      <h1>Registered Applications</h1>
+      <p class="text-faded">List of registered apps to track user activities.</p>
     </div>
 
     <table class="table table-hover">
       <thead>
         <tr>
           <th>App Name (url)</th>
-          <th colspan="2"></th>
+          <th colspan="2">Manage</th>
         </tr>
       </thead>
 
@@ -31,7 +32,7 @@
 
     <div class="pull-right">
       <%= link_to new_user_registered_application_path(current_user.id), class: 'btn btn-success' do %>
-        <span class="glyphicon glyphicon-plus-sign"></span> Register an application
+        <span class="glyphicon glyphicon-plus-sign"></span> Register a new app
       <% end %>
     </div>
   </div>

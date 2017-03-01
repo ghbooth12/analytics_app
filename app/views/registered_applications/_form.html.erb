@@ -11,16 +11,16 @@
   <% end %>
 
   <div class="field form-group">
-    <%= f.label :name, "Application Name" %>
-    <%= f.text_field :name, class: 'form-control', placeholder: 'Enter application name', autofocus: true %>
+    <%= f.label :name, "Your App Name" %>
+    <%= f.text_field :name, class: 'form-control', placeholder: 'e.g., Bakery Website', autofocus: true %>
   </div>
   <div class="field form-group">
-    <%= f.label :url, "Application URL" %><br>
-    <%= f.text_field :url, class: 'form-control', placeholder: 'Enter application url' %>
+    <%= f.label :url, "Your App URL" %><br>
+    <%= f.text_field :url, class: 'form-control', placeholder: 'e.g., http://www.bakery-example.com' %>
   </div>
   <div class="actions form-group pull-right">
     <%= button_tag type: 'submit', class: 'btn btn-primary' do %>
-      <span class="glyphicon glyphicon-ok-circle"></span> Save
+      <span class="glyphicon glyphicon-ok-circle"></span> Register
     <% end %>
   </div>
 <% end %>
