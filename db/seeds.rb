@@ -1,10 +1,13 @@
 test_users = (1..5).map do |n|
   User.new(
     username:     Faker::Name.name,
-    email:    "test#{n}@example.com",
-    password: "testtest"
+    email:        "test#{n}@example.com",
+    password:     "testtest"
   )
 end
+
+# Test User is for a sample account for first time user.
+test_users.push(User.new(username: "Test User", email: "test@test.io", password: "testtest"))
 
 test_users.each do |user|
   user.skip_confirmation!

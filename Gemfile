@@ -16,7 +16,6 @@ group :development, :test do
   gem 'spring'
   gem 'rspec-rails'
   gem 'shoulda'
-  gem 'faker'
   gem 'factory_girl_rails'
 end
 
@@ -32,3 +31,4 @@ gem 'devise'
 gem 'chartkick'
 gem 'groupdate'
 gem 'taps'
+gem 'faker'
